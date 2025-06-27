@@ -47,7 +47,7 @@ The model produces probabilities that provide us a measure of the model's confid
 ### Reliability/Calibration Curve
 This visual shows the calibration curve of the model on the test set. Test set observations are "binned" into groups with similar predicted probabilities withe the average probability of each bin given on the x-axis. The true proportion of win/losses for each group is given by each data point's y coordinate. Note the bins are partitioned using quantiles thus each bin contains a similar number of rows. The two significant observations to make about this visual are 1) the general slope of the blue line is significantly greater than 0 (and infact is roughly one) indicating that the model indeed has predictive power. This agrees with the logistic regression summary output given further below. 2) The points on the line are all relatively close the line y=x again confirming that the model is well calibrated. 
 
-![Model_Reliability_Curve.png](Calibration_Curve.png)
+![Model_Reliability_Curve.png](Calibration_curve.png)
 
 ### Model_Prediction_logistic_Regression.png
 This is the output from running a logistic regression of the model's predicted probabilities against the true binary outcomes of the test data set. We first see that the model obtains a 63% raw accuracy which is statistically significant since our test set is indeed balanced at approx 50% win/lose teams. I focus on the p-value of the coefficient for the model's predictions which is .000 (approx 0) allowing me to reject the hypothesis that my model has no statistical significance in predicting game winners and accept the alternative (i.e. I can trust that the model has predictive power).  
